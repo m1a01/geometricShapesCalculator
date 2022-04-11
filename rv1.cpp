@@ -4,131 +4,133 @@
 using namespace std;
 
 int main(){
-    float strA;
-    float strB;
-    float strC;
-    float strV;
-    float strP;
-    float strD;
-    float strE;
-    float strF;
-    int lik;
+    float valueA;
+    float valueB;
+    float valueC;
+    float valueHeight;
+    float radius;
+    float valueD;
+    float diagonalA;
+    float diagonalB;
+    int shape;
 
-    cout << "Izberi LIK s stevilko (1. kvadrat, 2. trikotnik, 3. krog, 4. elipsa, 5. deltoid, 6. trapez, 7. paralelogram) " << endl;
-    cin >> lik;
+    cout << "Choose a geometric shape: (1. square, 2. triangle, 3. circle, 4. ellipse, 5. deltoid, 6. trapeze, 7. parallelogram)" << endl <<  "ALL VALUES ARE IN CENTIMETERS " << endl;
+    cin >> shape;
 
-    switch(lik) {
+    switch(shape) {
     case 1: {
-        cout << "Vnesi dolzino stranice A v cm:" << endl;
-        cin >> strA;
+        cout << "Enter length of A: " << endl;
+        cin >> valueA;
 
-        float plKvadrat = strA*strA;
-        float obKvadrat = 4*strA;
+        float areaSquare = valueA * valueA;
+        float diameterSquare = 4 * valueA;
 
-        cout << "Ploscina kvadrata je z izbrano stranico je:" <<  plKvadrat << "cm2"<< endl;
-        cout << "Obseg kvadrata je z izbrano stranico je:" <<  obKvadrat <<"cm"<< endl;
+        cout << "Area of square is: " << areaSquare << "cm2" << endl;
+        cout << "Diameter of square is:" << diameterSquare << "cm" << endl;
 
     }
      break;
     case 2: {
-        cout << "Vnesi dolzino stranice A v cm:" << endl;
-        cin >> strA;
-        cout << "Vnesi dolzino stranice B v cm:" << endl;
-        cin >> strB;
-        cout << "Vnesi dolzino stranice C v cm:" << endl;
-        cin >> strC;
-        cout << "Vnesi visino lika v cm:" << endl;
-        cin >> strV;
+        cout << "Enter length of A: " << endl;
+        cin >> valueA;
+        cout << "Enter length of B: " << endl;
+        cin >> valueB;
+        cout << "Enter length of C:" << endl;
+        cin >> valueC;
+        cout << "Enter height of triangle: " << endl;
+        cin >> valueHeight;
 
-        float plTrikotnik = (strA*strV)/2;
-        float obTrikotnik = strA+strB+strC;
+        float areaTriangle = (valueA * valueHeight) / 2;
+        float diameterTriangle = valueA + valueB + valueC;
 
 
-        cout << "Ploscina trikotnika z izbranimi podatki je:" <<  plTrikotnik << "cm2"<< endl;
-        cout << "Obseg trikotnika z izbranimi podatki je:" <<  obTrikotnik <<"cm"<< endl;
+        cout << "Area of triangle is: " << areaTriangle << "cm2" << endl;
+        cout << "Diameter of triangle is: " << diameterTriangle << "cm" << endl;
     }
       break;
     case 3: {
-        cout << "Vnesi polmer lika v cm:" << endl;
-        cin >> strP;
+        cout << "Enter radius:" << endl;
+        cin >> radius;
 
-        float plKrog = pow(strP,2)*M_PI;
-        float obKrog = 2*strP*M_PI;
+        float areaCircle = pow(radius, 2) * M_PI;
+        float diameterCircle = 2 * radius * M_PI;
 
-        cout << "Ploscina kroga z izbranimi podatki je:" <<  plKrog << "cm2"<< endl;
-        cout << "Obseg kroga z izbranimi podatki je:" <<  obKrog <<"cm"<< endl;
+        cout << "Area of circle is: " << areaCircle << "cm2" << endl;
+        cout << "Diameter of circle is: " << diameterCircle << "cm" << endl;
 
     }
         break;
 
     case 4: {
-        cout << "Vnesi dolzino polosi A v cm:" << endl;
-        cin >> strA;
-        cout << "Vnesi dolzino polosi B v cm:" << endl;
-        cin >> strB;
+        cout << "Enter A axis: " << endl;
+        cin >> valueA;
+        cout << "Enter B axis: " << endl;
+        cin >> valueB;
 
-        float plElipsa = M_PI*strA*strB;
-        float obElipsa = M_PI*(strA+strB);
+        float areaEllipse = M_PI * valueA * valueB;
+        float diameterEllipse = M_PI * (valueA + valueB);
 
 
-        cout << "Ploscina elipse z izbranimi podatki je:" <<  plElipsa << "cm2"<< endl;
-        cout << "Obseg elipse z izbranimi podatki je:" <<  obElipsa <<"cm"<< endl;
+        cout << "Area of the ellipse is: " << areaEllipse << "cm2" << endl;
+        cout << "Diameter of the ellipse is: " << diameterEllipse << "cm" << endl;
     }
     break;
 
     case 5: {
-        cout << "Vnesi dolzino stranice A v cm:" << endl;
-        cin >> strA;
-        cout << "Vnesi dolzino stranice C v cm:" << endl;
-        cin >> strC;
-        cout << "Vnesi prvo diagonalo lika v cm:" << endl;
-        cin >> strE;
-        cout <<"Vnesi drugo diagonalo lika v cm" << endl;
-        cin >> strF;
+        cout << "Enter length of A: " << endl;
+        cin >> valueA;
+        cout << "Enter length of C: " << endl;
+        cin >> valueC;
+        cout << "Enter length of the first diagonal: " << endl;
+        cin >> diagonalA;
+        cout <<"Enter length of the second diagonal: " << endl;
+        cin >> diagonalB;
 
 
-        float plDeltoid = (strE*strF)/2;
-        float obDeltoid = (2*strA)+(2*strC);
+        float areaDeltoid = (diagonalA * diagonalB) / 2;
+        float diameterDeltoid = (2 * valueA) + (2 * valueC);
 
-        cout << "Obseg deltoida z izbranimi podatki je:" <<  obDeltoid <<"cm"<< endl;
-        cout << "Ploscina deltoid z izbranimi podatki je:" << plDeltoid << "cm2"<< endl;
+        cout << "Area of the deltoid is: " << areaDeltoid << "cm2" << endl;
+        cout << "Diameter of the deltoid is: " << diameterDeltoid << "cm" << endl;
+
 
     }
         break;
 
     case 6: {
-        cout << "Vnesi dolzino stranice A v cm:" << endl;
-        cin >> strA;
-        cout << "Vnesi dolzino stranice B v cm:" << endl;
-        cin >> strB;
-        cout << "Vnesi dolzino stranice C v cm:" << endl;
-        cin >> strC;
-        cout << "Vnesi dolzino stranice D v cm:" << endl;
-        cin >> strD;
-        cout << "Vnesi visino lika v cm:" << endl;
-        cin >> strV;
+        cout << "Enter length of A: " << endl;
+        cin >> valueA;
+        cout << "Enter length of B: " << endl;
+        cin >> valueB;
+        cout << "Enter length of C: " << endl;
+        cin >> valueC;
+        cout << "Enter length of D: " << endl;
+        cin >> valueD;
+        cout << "Enter height of trapeze: "<< endl;
+        cin >> valueHeight;
 
-        float plTrapez =((strA+strC)*strV)/2;
-        float obTrapez = strA+strB+strC+strD;
+        float areaTrapeze = ((valueA + valueC) * valueHeight) / 2;
+        float diameterTrapeze = valueA + valueB + valueC + valueD;
 
-        cout << "Obseg trapeza z izbranimi podatki je:" <<  obTrapez <<"cm"<< endl;
-        cout << "Ploscina trapeza z izbranimi podatki je:" << plTrapez << "cm2"<< endl;
+        cout << "Area of trapeze is: " << areaTrapeze << "cm2" << endl;
+        cout << "Diameter of trapeze is: " << diameterTrapeze << "cm" << endl;
+
     }
         break;
 
     case 7: {
-        cout << "Vnesi dolzino stranice A v cm:" << endl;
-        cin >> strA;
-        cout << "Vnesi dolzino stranice B v cm:" << endl;
-        cin >> strB;
-        cout << "Vnesi visino lika v cm:" << endl;
-        cin >> strV;
+        cout << "Enter length of A: "  << endl;
+        cin >> valueA;
+        cout << "Enter length of B: "  << endl;
+        cin >> valueB;
+        cout << "Enter height of parallelogram: " << endl;
+        cin >> valueHeight;
 
-        float plParalelogram = strA*strV;
-        float obParalelogram = 2*(strA+strB);
+        float areaParallelogram = valueA * valueHeight;
+        float diameterParallelogram = 2*(valueA + valueB);
 
-        cout << "Obseg paralelograma z izbranimi podatki je:" <<  obParalelogram <<"cm"<< endl;
-        cout << "Ploscina paralelograma z izbranimi podatki je:" << plParalelogram << "cm2"<< endl;
+        cout << "Area of parallelogram is: " <<  areaParallelogram <<"cm2"<< endl;
+        cout << "Diameter of parallelogram is: " << diameterParallelogram << "cm"<< endl;
 
     }
         return 0;
